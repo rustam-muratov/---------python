@@ -11,8 +11,18 @@ fiba_p, fiba_n = 0, 1
 position = 2
 while fiba_n < a:
     fiba_p, fiba_n = fiba_n, fiba_p + fiba_n
-    position += 1
+    position +=1
 if fiba_n == a:
-    print(position)
+     print(position)
 else:
-    print(-1)
+     print(-1)
+
+def func(a, fiba_p=0, fiba_n=1, position = 2):
+    if fiba_n == a:
+        return position
+    elif fiba_n < a:
+        return func(a, fiba_n, fiba_p + fiba_n, position +1)
+    else:
+        return "-1"
+
+print(func(5))
